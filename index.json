@@ -1,0 +1,37 @@
+{
+  "issued_at": "2026-11-06T21:28:17Z",
+  "packages": {
+    "kurulum": {
+      "asset": "kurulum-0.1.0.tar.gz",
+      "platforms": [
+        "ubuntu-26.04"
+      ],
+      "repo": "syhgorath/kurulum",
+      "sha256": "997ee2088c8566f8111d37afe537fee675a10eb24ca986aa0dfbb674b3eee3b3",
+      "version": "0.1.0"
+    },
+    "linux-hardening": {
+      "asset": "linux-hardening-0.13.0.tar.gz",
+      "platforms": [
+        "ubuntu-26.04",
+        "debian-13"
+      ],
+      "repo": "syhgorath/linux-hardening",
+      "sha256": "f31f7c3073f125f4e0ccab39f6039e118089f5d56e481fe45eb2150cf59956de",
+      "version": "0.13.0"
+    },
+    "utility": {
+      "asset": "utility-0.1.1.tar.gz",
+      "platforms": [
+        "ubuntu-26.04",
+        "debian-13"
+      ],
+      "repo": "syhgorath/utility",
+      "sha256": "94773eae56221646ebf64dc066147af0846d8aa88e5827d8ac27f4e7cbaf49f6",
+      "version": "0.1.1"
+    }
+  },
+  "schema": 1,
+  "serial": 1,
+  "valid_until": "2027-01-05T21:28:17Z"
+}
