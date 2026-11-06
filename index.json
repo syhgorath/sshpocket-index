@@ -1,5 +1,5 @@
 {
-  "issued_at": "2026-11-06T21:28:17Z",
+  "issued_at": "2026-11-06T22:46:27Z",
   "packages": {
     "kurulum": {
       "asset": "kurulum-0.1.0.tar.gz",
@@ -21,17 +21,17 @@
       "version": "0.13.0"
     },
     "utility": {
-      "asset": "utility-0.1.1.tar.gz",
+      "asset": "utility-0.1.2.tar.gz",
       "platforms": [
         "ubuntu-26.04",
         "debian-13"
       ],
       "repo": "syhgorath/utility",
-      "sha256": "94773eae56221646ebf64dc066147af0846d8aa88e5827d8ac27f4e7cbaf49f6",
-      "version": "0.1.1"
+      "sha256": "5afa901f3c6e486985e8951200b9b610eca8f5cf35a25c8d15abdca042a3efe2",
+      "version": "0.1.2"
     }
   },
   "schema": 1,
-  "serial": 1,
-  "valid_until": "2027-01-05T21:28:17Z"
+  "serial": 2,
+  "valid_until": "2027-01-05T22:46:27Z"
 }
