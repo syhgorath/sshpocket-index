@@ -352,3 +352,11 @@ SK
     run grep -c '^sshpocket-index namespaces="sshpocket-index" ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKVJS3mGlCaOT/l8XfR0TxuKxqLUs6PpVDa9TYqm0fLn$' "$ROOT/index_signers"
     [ "$output" = 1 ]
 }
+
+@test "göreli --archive/--sig çağıranın dizinine göre çözülür" {
+    mkpkg utility 0.1.1
+    cd "$T/arch"
+    run "$PUBLISH" add utility 0.1.1 syhgorath/utility --archive utility-0.1.1.tar.gz --sig utility-0.1.1.tar.gz.sig
+    [ "$status" -eq 0 ]
+    [ -f "$R/index.pending.json" ]
+}

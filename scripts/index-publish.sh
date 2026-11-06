@@ -16,6 +16,7 @@ die() { echo "HATA: $*" >&2; exit 1; }
 SELF_DIR=$(cd "$(dirname "$0")" && pwd)
 REPO_DIR=$(cd "$SELF_DIR/.." && pwd)
 LIB="$SELF_DIR/index_lib.py"
+ORIG_PWD=$PWD
 cd "$REPO_DIR"
 
 PKG_NS="sshpocket-component"
@@ -47,6 +48,10 @@ command -v git >/dev/null || die "git yok"
 [ -z "$REQUIRES" ] || [[ "$REQUIRES" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || die "--requires-sshpocket X.Y.Z olmalı: '$REQUIRES'"
 [ -z "$PLATFORMS" ] || [[ "$PLATFORMS" =~ ^[a-z0-9][a-z0-9._-]*(,[a-z0-9][a-z0-9._-]*)*$ ]] || die "--platforms virgüllü kimlik listesi olmalı: '$PLATFORMS'"
 { [ -z "$ARCHIVE" ] && [ -z "$SIG" ]; } || { [ -n "$ARCHIVE" ] && [ -n "$SIG" ]; } || die "--archive ve --sig birlikte verilmeli"
+
+# göreli --archive/--sig, betiğin çağrıldığı dizine göre verilir (depo dizinine geçtikten sonra da doğru kalsın)
+case "$ARCHIVE" in ""|/*) ;; *) ARCHIVE="$ORIG_PWD/$ARCHIVE" ;; esac
+case "$SIG" in ""|/*) ;; *) SIG="$ORIG_PWD/$SIG" ;; esac
 
 PENDING="index.pending.json"
 WORK=$(mktemp -d "${TMPDIR:-/tmp}/index-publish.XXXXXX")
